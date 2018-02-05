@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MultiServerComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!';
+  serverName = 'Test';
 
   constructor() {
     setTimeout(() => {
@@ -19,7 +20,10 @@ export class MultiServerComponent implements OnInit {
   }
 
   createServer() {
-    this.serverCreationStatus = 'Server was created.';
+    this.serverCreationStatus = 'Server was created. The server name is' + this.serverName;
   }
 
+  updateServerName(event: Event) {
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
 }
