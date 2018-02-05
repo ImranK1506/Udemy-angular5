@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./multi-server.component.css']
 })
 export class MultiServerComponent implements OnInit {
+  allowNewServer: boolean = false;
+  serverCreationStatus = 'No server was created!';
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
 
   ngOnInit() {
+  }
+
+  createServer() {
+    this.serverCreationStatus = 'Server was created.';
   }
 
 }
