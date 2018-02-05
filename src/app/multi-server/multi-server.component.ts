@@ -9,6 +9,7 @@ export class MultiServerComponent implements OnInit {
   allowNewServer: boolean = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'Test';
+  serverCreated = false;
 
   constructor() {
     setTimeout(() => {
@@ -20,6 +21,7 @@ export class MultiServerComponent implements OnInit {
   }
 
   createServer() {
+    this.serverCreated = true;
     this.serverCreationStatus = 'Server was created. The server name is' + this.serverName;
   }
 
